@@ -2,7 +2,7 @@ const request = require('request');
 //const breedName =  process.argv.slice(2);
 
 
-const fetchBreedDescription = function (breedName,callback) {
+const fetchBreedDescription = function(breedName,callback) {
   
   const url = `https://api.thecatapi.com/v1/breeds/search?q=${breedName}`;
   
@@ -22,14 +22,14 @@ const fetchBreedDescription = function (breedName,callback) {
         callback(null,"Error: requested breed is not found");
       } else {
         
-        callback(data[0].description);
+        callback(null,data[0].description);
         
       }
     }
   });
 };
 
-module.exports = fetchBreedDescription;
+module.exports = {fetchBreedDescription};
 
     
     
